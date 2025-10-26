@@ -14,9 +14,9 @@ function Navbar() {
 
     const navLinks = [
         {name: 'Home' , href:'/'},
-        {name : 'About',href: '/about'},
         {name : 'Services',href: '/services'},
-        {name : 'Why me',href: '/why-me'},
+        {name : 'About',href: '/about'},
+        // {name : 'Why me',href: '/why-me'},
         {name : 'Testimonials',href: '/testimonials'},
         // {name : 'Contact',href: '/contact'},
 
@@ -39,7 +39,7 @@ function Navbar() {
             </div>
 
             <div className='hidden md:flex'>
-                 <Button onClick={() => setIsOpen(false)}>Book an Appointment</Button>
+                 <Button href="/contact" onClick={() => setIsOpen(false)}>Book an Appointment</Button>
             </div>
             {/* mobile Menu */}
 
@@ -60,7 +60,7 @@ function Navbar() {
             {/* <Link href='/contact' onClick={() => setIsOpen(false)} className='border border-[#DF8020] bg-[#DF8020] text-white px-4 py-2 rounded-lg'>
               Book an Appointment
             </Link> */}
-            <Button onClick={() => setIsOpen(false)}>Book an Appointment</Button>
+            <Button href="/contact" onClick={() => setIsOpen(false)}>Book an Appointment</Button>
 
         </div>
 
