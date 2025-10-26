@@ -20,7 +20,7 @@ export default function Home() {
       achieve your wellness goals through personalized nutrition and lifestyle guidance.</p>
 
                    <div className="flex justify-center md:justify-start mt-4">
-                      <Button onClick={() => setIsOpen(false)}>Book an Appointment</Button>
+                      <Button >Book an Appointment</Button>
                   </div>
               </div>
 
