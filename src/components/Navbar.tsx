@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link'
 import {TextAlignJustify , X}  from "lucide-react";
 import Image from 'next/image';
+import Button from './Button';
 
 function Navbar() {
     const pathname = usePathname();
@@ -38,7 +39,7 @@ function Navbar() {
             </div>
 
             <div className='hidden md:flex'>
-                <Link href='/contact' className='border border-[#DF8020] bg-[#DF8020] text-white px-4 py-2 rounded-lg'>Book an Appointment</Link>
+                 <Button onClick={() => setIsOpen(false)}>Book an Appointment</Button>
             </div>
             {/* mobile Menu */}
 
@@ -56,9 +57,11 @@ function Navbar() {
               <Link key={link.name} href={link.href}  className={`${pathname === link.href ? "border-b-2 border-[#000] " : ""} hover:[#DF8020] transition-colors duration-200`} onClick={() => setIsOpen(false)}>{link.name}</Link>
             ))}
 
-            <Link href='/contact' onClick={() => setIsOpen(false)} className='border border-[#DF8020] bg-[#DF8020] text-white px-4 py-2 rounded-lg'>
+            {/* <Link href='/contact' onClick={() => setIsOpen(false)} className='border border-[#DF8020] bg-[#DF8020] text-white px-4 py-2 rounded-lg'>
               Book an Appointment
-            </Link>
+            </Link> */}
+            <Button onClick={() => setIsOpen(false)}>Book an Appointment</Button>
+
         </div>
 
     </nav>
