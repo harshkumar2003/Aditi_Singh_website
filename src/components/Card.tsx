@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon as LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
 type Props = {
