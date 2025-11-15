@@ -8,7 +8,7 @@ interface ButtonProps {
 }
 const Button : React.FC<ButtonProps> = ({ onClick, children , href }) => {
   return (
-    <Link href={href}  onClick={onClick} className='border border-[#DF8020] bg-[#DF8020] text-white px-4 py-2 rounded-lg'>
+    <Link href={href}  onClick={onClick} className='border border-[#DF8020] bg-[#DF8020] text-white px-4 py-2  rounded-lg'>
               {children}
     </Link>
   )

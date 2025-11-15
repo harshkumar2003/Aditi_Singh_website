@@ -59,7 +59,7 @@ export default function Home() {
             <p className="mt-2 text-gray-700 text-pretty">I offer a range of services designed to meet your unique needs and help you build a healthy relationshipwith food.</p>
           </div>
 
-          <div className="md:flex justify-center space-x-6 space-y-3 pt-14">
+          <div className="grid md:grid-cols-2 justify-items-center justify-center mt-10 space-y-6">
             {cardContent.map((con,index)=>(
               <Card key={index} Icon={con.Icon} heading={con.heading} para={con.para} href="/services"/>
             ))}

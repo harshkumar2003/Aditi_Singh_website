@@ -31,7 +31,7 @@ function Navbar() {
 
             {/* desktop menu */}
             <div>
-                <div className='hidden md:flex space-x-6 text-[#DF8020] text-lg font-medium'>
+                <div className='hidden md:flex space-x-6 text-[#DF8020] xl:text-lg lg:text-lg 2xl:text-lg md:text-sm text-lg font-medium'>
                     {navLinks.map((link)=>(
                         <Link key={link.name} href={link.href} className={`${pathname === link.href ? "border-b-2 border-[#000] " : ""} hover:[#DF8020] transition-colors duration-200`}>{link.name}</Link>
                     ))}
@@ -51,7 +51,7 @@ function Navbar() {
         </div>
         {/* mobile overlay */}
         
-        <div className={`text-[#DF8020] fixed inset-0 bg-white flex flex-col items-center justify-center gap-8 text-lg font-medium md:hidden z-40 transform transition-transform duration-300 ease-in-out
+        <div className={`text-[#DF8020] fixed inset-0 bg-white flex flex-col items-center justify-center gap-8  text-lg font-medium md:hidden z-40 transform transition-transform duration-300 ease-in-out
             ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}  className={`${pathname === link.href ? "border-b-2 border-[#000] " : ""} hover:[#DF8020] transition-colors duration-200`} onClick={() => setIsOpen(false)}>{link.name}</Link>
