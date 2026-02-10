@@ -2,11 +2,16 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { supabaseServer } from "@/lib/supabaseServer";
 
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.SUPABASE_URL as string | undefined;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as
+  | string
+  | undefined;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error("Missing SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY");
+function requireEnv(value: string | undefined, name: string): string {
+  if (!value) {
+    throw new Error(`Missing ${name}`);
+  }
+  return value;
 }
 
 export async function GET(req: Request) {
@@ -20,7 +25,9 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const supabaseAnon = createClient(supabaseUrl, supabaseAnonKey, {
+    const url = requireEnv(supabaseUrl, "SUPABASE_URL");
+    const anonKey = requireEnv(supabaseAnonKey, "NEXT_PUBLIC_SUPABASE_ANON_KEY");
+    const supabaseAnon = createClient(url, anonKey, {
       auth: { persistSession: false },
     });
 
@@ -60,7 +67,9 @@ export async function PATCH(req: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const supabaseAnon = createClient(supabaseUrl, supabaseAnonKey, {
+    const url = requireEnv(supabaseUrl, "SUPABASE_URL");
+    const anonKey = requireEnv(supabaseAnonKey, "NEXT_PUBLIC_SUPABASE_ANON_KEY");
+    const supabaseAnon = createClient(url, anonKey, {
       auth: { persistSession: false },
     });
 

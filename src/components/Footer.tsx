@@ -6,12 +6,20 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='mx-8 pt-4 pb-10 border-t border-[#DF8020] mt-8'>
-        <h1 className='text-black text-sm sm:text-base text-center'>@ 2025 Aditi Singh. All Rights Reserved.</h1>
-        <div className='flex justify-center pt-4 space-x-2'>
-            <Image src='/instagram.svg' alt='instagram' width={20} height={20}/>
-            <Image src='/facebook.svg' alt='facebook' width={20} height={20}/>
-            <Image src='/youtube.svg' alt='facebook' width={20} height={20}/>
+    <div className='mx-4 md:mx-10 lg:mx-24 xl:mx-40 pt-8 pb-12 border-t border-[#f1e3d6] mt-10'>
+        <div className='flex flex-col items-center gap-4'>
+          <p className='text-sm sm:text-base text-gray-700'>© 2025 Aditi Singh. All Rights Reserved.</p>
+          <div className='flex justify-center gap-3'>
+              <div className="p-2 rounded-full border border-[#f1e3d6] bg-white soft-shadow">
+                <Image src='/instagram.svg' alt='instagram' width={18} height={18}/>
+              </div>
+              <div className="p-2 rounded-full border border-[#f1e3d6] bg-white soft-shadow">
+                <Image src='/facebook.svg' alt='facebook' width={18} height={18}/>
+              </div>
+              <div className="p-2 rounded-full border border-[#f1e3d6] bg-white soft-shadow">
+                <Image src='/youtube.svg' alt='youtube' width={18} height={18}/>
+              </div>
+          </div>
         </div>
     </div>
   )

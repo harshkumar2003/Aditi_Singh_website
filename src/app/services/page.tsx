@@ -54,7 +54,7 @@ function Services() {
 
   return (
     <div className="mx-4 md:mx-10 lg:mx-24 xl:mx-40 py-12">
-      <div className="text-center">
+      <div className="text-center fade-up">
         <h1 className="font-semibold text-4xl">Services</h1>
         <p className="mt-2 text-gray-700">
           Tailored nutrition and lifestyle guidance designed for real life.
@@ -103,7 +103,7 @@ function Services() {
         </div>
       </div>
 
-      <div className="mt-12 text-center bg-[#DF8020]/10 border border-[#DF8020]/30 rounded-2xl p-8">
+      <div className="mt-12 text-center bg-[#DF8020]/10 border border-[#DF8020]/30 rounded-2xl p-8 fade-up">
         <h2 className="text-2xl font-semibold">Ready to Get Started?</h2>
         <p className="mt-2 text-gray-700">
           Book a consultation and take the first step toward a healthier you.

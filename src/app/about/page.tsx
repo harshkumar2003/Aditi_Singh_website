@@ -39,7 +39,7 @@ function About() {
     
   ]
   return (
-    <div className="mt-4 ">
+      <div className="mt-4 fade-up">
       <div className="md:flex justify-evenly items-center">
         <div className="flex justify-center">
           <Image

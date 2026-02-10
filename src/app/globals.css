@@ -1,2 +1,72 @@
 @import "tailwindcss";
 
+:root {
+  --brand: #df8020;
+  --brand-600: #c96f1b;
+  --ink: #1f1a14;
+  --muted: #6b5f55;
+  --paper: #fff7f0;
+  --paper-2: #fff1e6;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+a {
+  text-decoration: none;
+}
+
+.surface {
+  background: #ffffff;
+  border: 1px solid #f1e3d6;
+  box-shadow: 0 10px 30px rgba(31, 26, 20, 0.08);
+}
+
+.soft-shadow {
+  box-shadow: 0 12px 24px rgba(223, 128, 32, 0.12);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+.fade-up-delay {
+  animation: fadeUp 0.7s ease-out both;
+  animation-delay: 120ms;
+}
+
+.hover-lift {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+

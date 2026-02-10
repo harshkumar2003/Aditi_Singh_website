@@ -66,7 +66,7 @@ function Contact() {
   }
 
   return (
-    <div className="mx-4 md:mx-10 lg:mx-24 xl:mx-40 py-12">
+    <div className="mx-4 md:mx-10 lg:mx-24 xl:mx-40 py-12 fade-up">
       <h1 className="text-center font-semibold text-4xl">Book an Appointment</h1>
       <p className="text-center text-gray-700 mt-3">
         Share your details and preferred date. We will confirm the appointment shortly.

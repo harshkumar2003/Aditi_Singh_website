@@ -35,14 +35,18 @@ export default function Home() {
   return (
     <>
     {/* hero */}
-        <main className="mx-4 pt-10">
-          <div className="flex flex-col md:flex-row-reverse items-center justify-between md:px-12 lg:px-30 xl:px-60 py-4">
-              
+        <main className="mx-4 md:mx-10 lg:mx-24 xl:mx-40 pt-8 md:pt-12">
+          <div className="relative overflow-hidden rounded-3xl surface bg-gradient-to-br from-[#fff1e6] to-white p-6 md:p-10 fade-up">
+            <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-[#DF8020]/15 blur-2xl" />
+            <div className="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-[#DF8020]/10 blur-2xl" />
+          <div className="flex flex-col md:flex-row-reverse items-center justify-between md:px-6 py-4 relative z-10">
+               
               <div className=" flex   justify-center items-center ">
-                <Image src="/hero.png" alt="" width={300} height={300} className="rounded-xl"/>
+                <Image src="/hero.png" alt="" width={320} height={320} className="rounded-2xl float-slow"/>
               </div>
               <div className="md:w-1/2 text-center md:text-left px-8 mt-4">
-                <h1 className="font-extrabold text-2xl md:text-3xl lg:text-4xl text-balance">Your Journey to a Healthier You Starts Here</h1>
+                <p className="text-xs uppercase tracking-[0.3em] text-[#DF8020]">Dietitian</p>
+                <h1 className="font-extrabold text-2xl md:text-3xl lg:text-4xl text-balance mt-2">Your Journey to a Healthier You Starts Here</h1>
                 <p className="mt-3 text-gray-700 text-pretty">Welcome to the practice of Aditi Singh, a dedicated dietitian committed to helping you
                     achieve your wellness goals through personalized nutrition and lifestyle guidance.</p>
 
@@ -52,12 +56,13 @@ export default function Home() {
                   </div>
               </div>
           </div>
+          </div>
            
         </main>
 
         {/* My services */}
 
-        <div className="mt-36 mx-4 mb-4">
+        <div className="mt-20 mx-4 md:mx-10 lg:mx-24 xl:mx-40 mb-4">
             <h1 className="text-center font-semibold text-4xl">My Services</h1>
           <div className="mx-4 text-center mt-8">
             <h2 className="font-bold text-xl md:text-3xl lg:text-4xl text-balance">Tailored Nutrition for a Balanced Life</h2>
@@ -76,14 +81,14 @@ export default function Home() {
 
         {/* Testimonials */}
 
-        <div className="mt-28 mx-4 mb-20">
+        <div className="mt-20 mx-4 md:mx-10 lg:mx-24 xl:mx-40 mb-20">
             <h1 className="text-center font-semibold text-4xl">What Clients Say</h1>
           {/* <div className="mx-4 text-center mt-8">
             <h2 className="font-bold text-xl md:text-3xl lg:text-4xl text-balance">Tailored Nutrition for a Balanced Life</h2>
             <p className="mt-2 text-gray-700 text-pretty">I offer a range of services designed to meet your unique needs and help you build a healthy relationshipwith food.</p>
           </div> */}
 
-          <div className="md:flex justify-center space-x-6 space-y-3 pt-14">
+          <div className="md:flex justify-center space-x-6 space-y-3 pt-12">
             {testimonials.length > 0 ? (
               testimonials.map((t, index) => (
                 <TCard

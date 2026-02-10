@@ -8,8 +8,12 @@ interface ButtonProps {
 }
 const Button : React.FC<ButtonProps> = ({ onClick, children , href }) => {
   return (
-    <Link href={href}  onClick={onClick} className='border border-[#DF8020] bg-[#DF8020] text-white px-4 py-2  rounded-lg'>
-              {children}
+    <Link
+      href={href}
+      onClick={onClick}
+      className="inline-flex items-center justify-center gap-2 border border-[#df8020] bg-gradient-to-r from-[#DF8020] to-[#f29b3d] text-white px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 hover-lift"
+    >
+      {children}
     </Link>
   )
 }
