@@ -12,12 +12,12 @@ function About() {
     {Icon : Brain, heading : 'Evidence-Based' , para : "My recommendations are grounded in the latest scientific research to ensure effective and safe guidance." }
   ]
   const cardCo1 = [
-    { heading : 'Empathy' , para : "I listen with an open heart to understand your unique story and challenges." },
-    {heading : 'Integrity' , para : "My practice is built on honesty, transparency, and ethical principles." },
-    { heading : 'Personalization' , para : "There is no one-size-fits-all approach; your plan will be tailored to you." },
-    { heading : 'Compassion' , para : "I provide a supportive, non-judgmental space for your wellness journey." },
-    { heading : 'Education' , para : "I empower you with knowledge to make informed decisions about your health." },
-    { heading : 'Collaboration' , para : "We work together as partners to achieve your health and wellness goals." },
+    { Icon: Heart, heading : 'Empathy' , para : "I listen with an open heart to understand your unique story and challenges." },
+    { Icon: Brain, heading : 'Integrity' , para : "My practice is built on honesty, transparency, and ethical principles." },
+    { Icon: CircleStar, heading : 'Personalization' , para : "There is no one-size-fits-all approach; your plan will be tailored to you." },
+    { Icon: Users, heading : 'Compassion' , para : "I provide a supportive, non-judgmental space for your wellness journey." },
+    { Icon: GraduationCap, heading : 'Education' , para : "I empower you with knowledge to make informed decisions about your health." },
+    { Icon: Leaf, heading : 'Collaboration' , para : "We work together as partners to achieve your health and wellness goals." },
   ]
 
   const Q1 = [
@@ -96,7 +96,7 @@ function About() {
         <h1 className="font-extrabold text-2xl text-center">My Values</h1>
         <div className="justify-center items-center  grid sm:grid-cols-2  gap-3 mt-4 justify-items-center xl:grid-cols-3">
           {cardCo1.map((con,index)=>(
-          <Card key={index} heading={con.heading} para={con.para}/>
+          <Card key={index} Icon={con.Icon} heading={con.heading} para={con.para}/>
         ))}
         </div>
           

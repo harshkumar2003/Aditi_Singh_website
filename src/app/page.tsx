@@ -3,8 +3,9 @@ import Button from "@/components/Button";
 import Card from "@/components/Card";
 import TCard from "@/components/TestimonialCard";
 // import "./globals.css";
+import { BriefcaseBusiness, FileText } from 'lucide-react';
 import Image from "next/image";
-import { FileText ,BriefcaseBusiness} from 'lucide-react';
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
@@ -13,20 +14,24 @@ export default function Home() {
     {Icon : FileText , heading : 'Weight Management' , para : "A sustainable and supportive approach to achieving and maintaining a healthy weight."},
     {Icon : BriefcaseBusiness , heading : 'Corporate Wellness' , para : "Engaging workshops and programs to promote a healthy workforce."}
   ]
-  const testimonials = [
-  {
-    avatar: "/avatars/user1.jpg",
-    name: "Harsh Kumar",
-    role: "Full Stack Developer",
-    testimonial: "This platform helped me achieve my goals faster!"
-  },
-  {
-    avatar: "/avatars/user2.jpg",
-    name: "Ishan Singh",
-    role: "UI/UX Designer",
-    testimonial: "The design and user experience are just amazing."
-  }
-]
+  const [testimonials, setTestimonials] = useState<
+    { avatar_url?: string | null; name: string; role?: string | null; testimonial: string }[]
+  >([]);
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch("/api/testimonials?limit=2");
+        const json = await res.json();
+        if (res.ok) {
+          setTestimonials(json.testimonials || []);
+        }
+      } catch {
+        // ignore
+      }
+    }
+    load();
+  }, []);
   return (
     <>
     {/* hero */}
@@ -34,7 +39,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row-reverse items-center justify-between md:px-12 lg:px-30 xl:px-60 py-4">
               
               <div className=" flex   justify-center items-center ">
-                <Image src="/hero_imag.png" alt="" width={300} height={300} className="rounded-xl"/>
+                <Image src="/hero.png" alt="" width={300} height={300} className="rounded-xl"/>
               </div>
               <div className="md:w-1/2 text-center md:text-left px-8 mt-4">
                 <h1 className="font-extrabold text-2xl md:text-3xl lg:text-4xl text-balance">Your Journey to a Healthier You Starts Here</h1>
@@ -59,7 +64,7 @@ export default function Home() {
             <p className="mt-2 text-gray-700 text-pretty">I offer a range of services designed to meet your unique needs and help you build a healthy relationshipwith food.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 justify-items-center justify-center mt-10 space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center mt-10 gap-6">
             {cardContent.map((con,index)=>(
               <Card key={index} Icon={con.Icon} heading={con.heading} para={con.para} href="/services"/>
             ))}
@@ -79,9 +84,21 @@ export default function Home() {
           </div> */}
 
           <div className="md:flex justify-center space-x-6 space-y-3 pt-14">
-            {testimonials.map((t,index)=>(
-              <TCard key={index} avatar={t.avatar} name={t.name} role={t.role} testimonial={t.testimonial} />
-            ))}
+            {testimonials.length > 0 ? (
+              testimonials.map((t, index) => (
+                <TCard
+                  key={index}
+                  avatar={t.avatar_url || undefined}
+                  name={t.name}
+                  role={t.role || undefined}
+                  testimonial={t.testimonial}
+                />
+              ))
+            ) : (
+              <p className="text-center text-gray-500 w-full">
+                No testimonials yet.
+              </p>
+            )}
 
           </div>
           
