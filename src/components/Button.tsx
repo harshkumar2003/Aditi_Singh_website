@@ -5,13 +5,14 @@ interface ButtonProps {
   onClick?: () => void;
   children: React.ReactNode;
   href: string;
+  className?: string;
 }
-const Button : React.FC<ButtonProps> = ({ onClick, children , href }) => {
+const Button : React.FC<ButtonProps> = ({ onClick, children , href, className = "" }) => {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className="inline-flex items-center justify-center gap-2 border border-[#df8020] bg-gradient-to-r from-[#DF8020] to-[#f29b3d] text-white px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 hover-lift"
+      className={`inline-flex items-center justify-center gap-2 border border-[#df8020] bg-gradient-to-r from-[#DF8020] to-[#f29b3d] text-white px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 hover-lift ${className}`}
     >
       {children}
     </Link>

@@ -40,20 +40,20 @@ function About() {
   ]
   return (
       <div className="mt-4 fade-up">
-      <div className="md:flex justify-evenly items-center">
-        <div className="flex justify-center">
+      <div className="px-4 md:px-6 lg:px-8 md:flex justify-evenly items-center gap-8">
+        <div className="flex justify-center md:justify-start shrink-0">
           <Image
             src="/about.png"
             alt="Aditi Singh"
-            width={450}
-            height={450}
-            className="rounded-full w-60 "
+            width={400}
+            height={400}
+            className="rounded-full w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover object-top"
           />
         </div>
       
-        <div className="text-center md:text-left mt-2 md:w-1/2">
-          <h1 className="font-extrabold text-2xl">About Aditi Singh</h1>
-          <p className="text-base text-gray-700">
+        <div className="text-center md:text-left mt-4 md:mt-0 md:w-1/2">
+          <h1 className="font-extrabold text-2xl md:text-3xl">About Aditi Singh</h1>
+          <p className="text-sm sm:text-base text-gray-700 leading-relaxed mt-2">
             A brief, welcoming statement about my passion for helping people
             achieve their health goals through balanced nutrition and mindful
             living.
@@ -62,9 +62,9 @@ function About() {
       </div>
 
 
-      <div className="mt-6 mx-4 max-w-3xl mx-auto">
-        <h1 className="font-extrabold text-2xl text-center">My Story</h1>
-        <p className="text-justify leading-relaxed pt-4 ">
+      <div className="mt-8 px-4 max-w-3xl mx-auto">
+        <h1 className="font-extrabold text-2xl md:text-3xl text-center">My Story</h1>
+        <p className="text-left sm:text-justify leading-relaxed pt-4 text-sm sm:text-base">
           My journey into the world of nutrition began not in a classroom, but
           from a personal quest for wellness. Growing up, I was always
           fascinated by how food could affect our energy, mood, and overall
@@ -82,8 +82,8 @@ function About() {
           unique challenges and triumphs of each individual's health journey.
         </p>
       </div>
-      <div className="mt-6 mx-4 pb-6">
-        <h1 className="font-extrabold text-2xl text-center">Philosophy & Approach</h1>
+      <div className="mt-8 px-4 pb-6">
+        <h1 className="font-extrabold text-2xl md:text-3xl text-center">Philosophy & Approach</h1>
 
         <div className="mt-4  justify-center items-center  grid sm:grid-cols-2 xl:grid-cols-3 gap-3 justify-items-center">
           {cardCo.map((con,index)=>(
@@ -92,8 +92,8 @@ function About() {
         </div>
       </div>
 
-      <div className="mt-6 mx-4 pb-6">
-        <h1 className="font-extrabold text-2xl text-center">My Values</h1>
+      <div className="mt-8 px-4 pb-6">
+        <h1 className="font-extrabold text-2xl md:text-3xl text-center">My Values</h1>
         <div className="justify-center items-center  grid sm:grid-cols-2  gap-3 mt-4 justify-items-center xl:grid-cols-3">
           {cardCo1.map((con,index)=>(
           <Card key={index} Icon={con.Icon} heading={con.heading} para={con.para}/>
@@ -103,32 +103,32 @@ function About() {
       </div>
       
 
-      <div className="mt-6 mx-4 pb-6">
-          <h1 className="font-extrabold text-2xl text-center">Academic Excellence</h1>
+      <div className="mt-8 px-4 pb-6">
+          <h1 className="font-extrabold text-2xl md:text-3xl text-center">Academic Excellence</h1>
           <div className="justify-center items-center  grid sm:grid-cols-2  gap-3 justify-items-center mt-4 ">
               {Q1.map((con,index)=>(
                 <Card key={index} Icon={con.Icon} heading={con.heading} para={con.para}/>
               ))}
           </div>
       </div>
-      <div className="mt-6 mx-4 pb-6">
-          <h1 className="font-extrabold text-2xl text-center">Professional Experience</h1>
+      <div className="mt-8 px-4 pb-6">
+          <h1 className="font-extrabold text-2xl md:text-3xl text-center">Professional Experience</h1>
           <div className="justify-center items-center  grid sm:grid-cols-2  gap-3 justify-items-center mt-4 xl:grid-cols-1">
               {Q2.map((con,index)=>(
                 <Card key={index} Icon={con.Icon} heading={con.heading} para={con.para}/>
               ))}
           </div>
       </div>
-      <div className="mt-6 mx-4 pb-6">
-          <h1 className="font-extrabold text-2xl text-center">Professional Memberships & Associations</h1>
+      <div className="mt-8 px-4 pb-6">
+          <h1 className="font-extrabold text-2xl md:text-3xl text-center">Professional Memberships & Associations</h1>
           <div className="justify-center items-center  grid sm:grid-cols-2  gap-3 justify-items-center mt-4 xl:grid-cols-1">
               {Q3.map((con,index)=>(
                 <Card key={index} Icon={con.Icon} heading={con.heading} para={con.para}/>
               ))}
           </div>
       </div>
-      <div className="mt-6 mx-4 pb-6">
-          <h1 className="font-extrabold text-2xl text-center">Certifications & Specialisations</h1>
+      <div className="mt-8 px-4 pb-6">
+          <h1 className="font-extrabold text-2xl md:text-3xl text-center">Certifications & Specialisations</h1>
           <div className="justify-center items-center  grid sm:grid-cols-2  gap-3 justify-items-center mt-4 xl:grid-cols-3">
               {Q4.map((con,index)=>(
                 <Card key={index} Icon={con.Icon}  para={con.para}/>

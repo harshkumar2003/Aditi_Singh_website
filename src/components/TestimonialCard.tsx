@@ -16,7 +16,7 @@ function TestimonialCard({ avatar, name, role, testimonial }: Props) {
     .slice(0, 2)
     .toUpperCase();
   return (
-    <div className="surface rounded-2xl p-6 flex flex-col items-center text-center transition-transform transform hover:-translate-y-1 hover:shadow-xl duration-300 hover-lift fade-up w-full sm:w-80">
+    <div className="surface rounded-2xl p-6 flex flex-col items-center text-center transition-transform transform hover:-translate-y-1 hover:shadow-xl duration-300 hover-lift fade-up w-full max-w-sm">
       <div className="mb-4">
         {avatar ? (
           <Image

@@ -22,28 +22,28 @@ function Navbar() {
 
     ]
   return (
-    <nav className='   mx-8 py-1 border-b border-[#DF8020]'>
-        <div className='  flex  items-center justify-between pt-4 md:mx-10 mx-4'>
+    <nav className='mx-4 md:mx-6 lg:mx-8 py-1 border-b border-[#DF8020]'>
+        <div className='flex items-center justify-between pt-4'>
             <div className=''>
-                <Link href='/'><Image src='/logo.svg' alt="logo" width={160} height={0} className=' cursor-pointer'/></Link>
+                <Link href='/'><Image src='/logo.svg' alt="logo" width={150} height={0} className='cursor-pointer lg:w-[160px] w-[130px]'/></Link>
             </div>
             
 
             {/* desktop menu */}
             <div>
-                <div className='hidden md:flex space-x-6 text-[#DF8020] xl:text-lg lg:text-lg 2xl:text-lg md:text-sm text-lg font-medium'>
+                <div className='hidden lg:flex items-center gap-5 text-[#DF8020] text-sm xl:text-base font-medium'>
                     {navLinks.map((link)=>(
                         <Link key={link.name} href={link.href} className={`${pathname === link.href ? "border-b-2 border-[#000] " : ""} hover:[#DF8020] transition-colors duration-200`}>{link.name}</Link>
                     ))}
                 </div>
             </div>
 
-            <div className='hidden md:flex'>
-                 <Button href="/contact" onClick={() => setIsOpen(false)}>Book an Appointment</Button>
+            <div className='hidden lg:flex'>
+                 <Button href="/contact" onClick={() => setIsOpen(false)} className='whitespace-nowrap text-sm px-4 py-2'>Book an Appointment</Button>
             </div>
             {/* mobile Menu */}
 
-            <div className='md:hidden flex z-50'>
+            <div className='lg:hidden flex z-50'>
                 <button onClick={toggleMenu} className='focus:outline-none'>{isOpen ?<X size={35} className='text-[#DF8020]'/> : <TextAlignJustify size={24}/>} </button>
 
             </div>
@@ -51,7 +51,7 @@ function Navbar() {
         </div>
         {/* mobile overlay */}
         
-        <div className={`text-[#DF8020] fixed inset-0 bg-white flex flex-col items-center justify-center gap-8  text-lg font-medium md:hidden z-40 transform transition-transform duration-300 ease-in-out
+        <div className={`text-[#DF8020] fixed inset-0 bg-white flex flex-col items-center justify-center gap-8  text-lg font-medium lg:hidden z-40 transform transition-transform duration-300 ease-in-out
             ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}  className={`${pathname === link.href ? "border-b-2 border-[#000] " : ""} hover:[#DF8020] transition-colors duration-200`} onClick={() => setIsOpen(false)}>{link.name}</Link>
